@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+
+  <title>Water Sort Pro</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- MENIU PRINCIPAL -->
+  <div id="main-menu" class="menu">
+    <h1>💧 Water Sort Pro</h1>
+    <button id="start-game" class="menu-btn">▶ Start Joc</button>
+    <button id="toggle-sound" class="menu-btn">🔊 Sunet: ON</button>
+    <button id="reset-progress" class="menu-btn">🧹 Reset Progres</button>
+  </div>
+
+  <!-- CONFETTI -->
+  <div id="confetti-container"></div>
+
+  <!-- CONTAINER JOC -->
+  <div id="game-container">
+
+    <!-- HINTS -->
+    <div id="hint-left">💡 Hinturi: 3</div>
+
+    <!-- CONTROALE -->
+    <div id="controls">
+      <button id="pause-button" class="action-button">⏸ Pauză</button>
+      <div id="level-display">Nivel 1</div>
+      <button id="restart-button" class="action-button">🔁</button>
+      <button id="hint-button" class="action-button">💡</button>
+    </div>
+
+    <!-- ZONA TUBURI -->
+    <div id="tube-container"></div>
+
+    <!-- MESAJ WIN -->
+    <div id="win-message">
+      🎉 Nivel completat!
+      <br />
+      <button id="next-level-button" class="action-button">➡️ Următorul nivel</button>
+    </div>
+
+    <!-- BUTON MARE CONTINUĂ (pe pauză) -->
+    <button id="pause-overlay-btn" style="display:none;">▶ Continuă</button>
+
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="pour-sound" src="poor.mp3"></audio>
+  <audio id="wrong-sound" src="wrong.mp3"></audio>
+  <audio id="win-sound" src="win.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
