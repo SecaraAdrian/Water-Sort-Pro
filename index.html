@@ -11,11 +11,10 @@
   <title>Water Sort Pro</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
   <!-- MENIU PRINCIPAL -->
-  <div id="main-menu" class="menu">
+  <div id="main-menu">
     <h1>💧 Water Sort Pro</h1>
     <button id="start-game" class="menu-btn">▶ Start Joc</button>
     <button id="toggle-sound" class="menu-btn">🔊 Sunet: ON</button>
@@ -28,10 +27,8 @@
   <!-- CONTAINER JOC -->
   <div id="game-container">
 
-    <!-- HINTS -->
     <div id="hint-left">💡 Hinturi: 3</div>
 
-    <!-- CONTROALE -->
     <div id="controls">
       <button id="pause-button" class="action-button">⏸ Pauză</button>
       <div id="level-display">Nivel 1</div>
@@ -39,17 +36,23 @@
       <button id="hint-button" class="action-button">💡</button>
     </div>
 
-    <!-- TUBURI -->
+    <div id="notification-bar"></div>
+
     <div id="tube-container"></div>
 
-    <!-- MESAJ WIN -->
     <div id="win-message">
-      🎉 Nivel completat! <br />
-      <button id="next-level-button" class="action-button">➡️ Următorul nivel</button>
+      🎉 Nivel completat!
+      <br />
+      <button id="next-level-button" class="action-button">
+        ➡️ Următorul nivel
+      </button>
     </div>
 
-    <!-- BUTON CONTINUĂ -->
     <button id="pause-overlay-btn" style="display:none;">▶ Continuă</button>
+
+    <!-- Floating Buttons -->
+    <!-- <button id="theme-toggle" class="floating-btn primary">🌓</button> -->
+    <button id="extra-hint-btn" class="floating-btn secondary">+💡</button>
 
   </div>
 
@@ -60,12 +63,13 @@
 
   <script src="script.js"></script>
 
-  <!-- SERVICE WORKER -->
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("service-worker.js");
     }
+    if ("Notification" in window && Notification.permission === "default") {
+      Notification.requestPermission();
+    }
   </script>
-
 </body>
 </html>
