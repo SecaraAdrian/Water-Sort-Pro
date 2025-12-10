@@ -2,14 +2,16 @@
 <html lang="ro" class="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#000000" />
 
   <title>Water Sort Pro</title>
-
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- MENIU PRINCIPAL -->
@@ -37,17 +39,16 @@
       <button id="hint-button" class="action-button">💡</button>
     </div>
 
-    <!-- ZONA TUBURI -->
+    <!-- TUBURI -->
     <div id="tube-container"></div>
 
     <!-- MESAJ WIN -->
     <div id="win-message">
-      🎉 Nivel completat!
-      <br />
+      🎉 Nivel completat! <br />
       <button id="next-level-button" class="action-button">➡️ Următorul nivel</button>
     </div>
 
-    <!-- BUTON MARE CONTINUĂ (pe pauză) -->
+    <!-- BUTON CONTINUĂ -->
     <button id="pause-overlay-btn" style="display:none;">▶ Continuă</button>
 
   </div>
@@ -58,5 +59,13 @@
   <audio id="win-sound" src="win.mp3"></audio>
 
   <script src="script.js"></script>
+
+  <!-- SERVICE WORKER -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+
 </body>
 </html>
